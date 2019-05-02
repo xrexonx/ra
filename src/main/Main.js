@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import AppRouter from "../AppRouter";
+import AppPages from "../AppPages";
 
 class Main extends Component {
   render() {
     return (
       <main className="mdl-layout__content">
-        <AppRouter />
+        <AppPages />
       </main>
     );
   }
