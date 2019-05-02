@@ -4,7 +4,7 @@ import PortfolioList from './portfolio/List';
 import Blog from "./blog/Blog";
 import About from './about/About';
 import Contact from "./contact/Contact";
-import Contacts from "./contact/Contacts";
+import Contacts from "./contacts/Contacts";
 
 class AppPages extends Component {
   render() {
@@ -14,7 +14,7 @@ class AppPages extends Component {
         <Route path="/blog/" component={Blog} />
         <Route path="/about/" component={About} />
         <Route path="/contacts/" component={Contacts} />
-        <Route path="/contacts/:id" component={Contact} />
+        <Route path="/contact/:id" component={Contact} />
       </Fragment>
     );
   }

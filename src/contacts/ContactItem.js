@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class ContactItem extends Component {
   render() {
@@ -10,7 +11,9 @@ class ContactItem extends Component {
         <td className="mdl-data-table__cell--non-numeric">{user.phone}</td>
         <td className="mdl-data-table__cell--non-numeric">{user.company.name}</td>
         <td className="mdl-data-table__cell--non-numeric">{user.address.city}</td>
-        <td className="mdl-data-table__cell--non-numeric">{user.website}</td>
+        <td className="mdl-data-table__cell--non-numeric">
+          <Link to={`/contact/${user.id}`}>View</Link>
+        </td>
       </tr>
     );
   }
