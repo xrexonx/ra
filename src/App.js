@@ -9,11 +9,13 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state.appTitle = 'React JS Training - FPT Software Philippines';
+    this.state = {
+      appTitle: 'React JS Training - FPT Software Philippines'
+    };
   }
 
   render() {
-    const appTitle = this.state;
+    const appTitle = this.state.appTitle;
     return (
       <BrowserRouter>
         <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
