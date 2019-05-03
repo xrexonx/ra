@@ -8,12 +8,9 @@ class Reservation extends Component {
       numberOfGuests: 2,
       notes: ''
     };
-
-    this.submitForm = this.submitForm.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleInputChange(event) {
+  handleInputChange = (event) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
@@ -22,14 +19,14 @@ class Reservation extends Component {
       [name]: value
     });
 
-  }
+  };
 
-  submitForm(e) {
+  submitForm = (e) => {
     e.preventDefault();
     if (this.state) {
       console.log(this.state);
     }
-  }
+  };
 
   render() {
     return (
