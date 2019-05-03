@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 
-class NavLinks extends Component {
+class NavLinks extends Component<RouteComponentProps> {
   render() {
     const path = this.props.location.pathname;
     return (

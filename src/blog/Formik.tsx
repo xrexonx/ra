@@ -1,36 +1,43 @@
-import React, { Component } from 'react';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+// import React from 'react';
+import * as React from 'react';
+import {ErrorMessage, Field, Form, Formik, FormikProps, FormikActions } from 'formik';
 
-class FormikComponent extends Component {
+interface User {
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+}
+
+class FormikComponent extends React.Component<FormikProps<User>> {
 
   initialValues() {
     return {
       name: '',
       email: '',
       phone: '',
-      password: '',
+      password: ''
     };
   }
 
-  validate(values) {
+  validate(values: User) {
     console.log({values});
   }
 
-  onSubmit(values, setSubmitting ) {
-    setSubmitting(true);
+  onSubmit(values: User, actions: FormikActions<User>) {
+    actions.setSubmitting(true);
     console.log({values});
-    // Submit data to server
+    // Submit data to server<>
     setTimeout(() => {
-      setSubmitting(false);
+      actions.setSubmitting(false);
     }, 400);
   }
 
   render() {
     return (
       <Formik
-        validate={this.validate}
         initialValues={this.initialValues()}
-        onSubmit={(values, { setSubmitting }) => this.onSubmit(values, setSubmitting)}
+        onSubmit={(values, actions) => this.onSubmit(values, actions)}
       >
         {({isSubmitting}) => (
           <Form>
