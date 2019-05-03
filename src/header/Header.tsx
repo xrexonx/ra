@@ -1,8 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import NavLinks from '../navLinks/NavLinks';
 
-class Header extends Component {
+interface Props {
+    headerTitle: string
+}
+
+class Header extends Component<Props> {
   render() {
     const { headerTitle } = this.props;
     return (
@@ -25,9 +28,5 @@ class Header extends Component {
     );
   }
 }
-
-Header.propTypes = {
-  headerTitle: PropTypes.string
-};
 
 export default Header;

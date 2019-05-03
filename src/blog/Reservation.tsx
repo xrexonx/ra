@@ -1,7 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component, ReactPropTypes} from 'react';
 
-class Reservation extends Component {
-  constructor(props) {
+interface State {
+    isGoing: boolean;
+    numberOfGuests: number;
+    notes: string
+}
+
+class Reservation extends Component<any, State> {
+  constructor(props: ReactPropTypes) {
     super(props);
     this.state = {
       isGoing: true,
@@ -10,18 +16,17 @@ class Reservation extends Component {
     };
   }
 
-  handleInputChange = (event) => {
+  handleInputChange = (event: any) => {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
       [name]: value
-    });
-
+    } as any);
   };
 
-  submitForm = (e) => {
+  submitForm = (e: any) => {
     e.preventDefault();
     if (this.state) {
       console.log(this.state);

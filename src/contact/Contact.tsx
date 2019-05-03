@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
+import { withRouter, RouteComponentProps } from "react-router-dom";
 import Loading from '../_widgets/Loading';
 
-class Contact extends Component {
+interface Props {
+  id: string
+}
+
+interface State {
+  user: User
+}
+
+class Contact extends Component<RouteComponentProps<Props>, State> {
 
   fetchUser() {
     const userId = this.props.match.params.id;

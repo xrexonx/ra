@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, ReactPropTypes } from 'react';
 import Main from './main/Main';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 import './App.css';
 import { BrowserRouter } from "react-router-dom";
 
-class App extends Component {
+interface State {
+  appTitle: string
+}
 
-  constructor(props) {
+class App extends Component<any, State> {
+
+  constructor(props: ReactPropTypes) {
     super(props);
     this.state = {
       appTitle: 'React JS Training - FPT Software Philippines'
