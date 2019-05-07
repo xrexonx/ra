@@ -17,7 +17,7 @@ interface Address extends Id {
     geo: Geo
 }
 
-interface User {
+export interface User {
     id: number;
     name: string;
     email: string;
