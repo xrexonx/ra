@@ -6,10 +6,10 @@ import './App.css';
 import { BrowserRouter } from "react-router-dom";
 
 interface State {
-  appTitle: string
+  appTitle: string;
 }
 
-class App extends Component<any, State> {
+class App extends Component<{}, State> {
 
   constructor(props: ReactPropTypes) {
     super(props);
