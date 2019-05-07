@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import ContactItem from './ContactItem';
 
-class Contacts extends Component {
+interface State {
+  contacts: User[];
+}
+
+class Contacts extends Component<RouteComponentProps<{}>, State> {
 
   fetchUsers() {
     return fetch('https://jsonplaceholder.typicode.com/users')
@@ -32,7 +36,7 @@ class Contacts extends Component {
           </thead>
           <tbody>
             {contacts && contacts.length < 0 && <tr>No Contacts found </tr>}
-            {contacts && contacts.map(contact => <ContactItem key={contact.id} item={contact} />)}
+            {contacts && contacts.map(contact => <ContactItem key={contact.id} user={contact} />)}
           </tbody>
         </table>
       </div>

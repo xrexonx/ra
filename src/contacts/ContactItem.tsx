@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
-class ContactItem extends Component {
+interface Props {
+    user: User;
+}
+
+class ContactItem extends Component<Props> {
   render() {
-    const user = this.props.item;
+    const { user } = this.props;
     return (
       <tr>
         <td className="mdl-data-table__cell--non-numeric">{user.name}</td>
