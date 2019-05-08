@@ -1,6 +1,6 @@
 // import React from 'react';
 import * as React from 'react';
-import {ErrorMessage, Field, Form, Formik, FormikProps, FormikActions } from 'formik';
+import { ErrorMessage, Field, Form, Formik, FormikProps, FormikActions } from 'formik';
 
 interface User {
   name: string;
@@ -27,7 +27,7 @@ class FormikComponent extends React.Component<FormikProps<User>> {
   onSubmit(values: User, actions: FormikActions<User>) {
     actions.setSubmitting(true);
     console.log({values});
-    // Submit data to server<>
+    // Submit data to server
     setTimeout(() => {
       actions.setSubmitting(false);
     }, 400);

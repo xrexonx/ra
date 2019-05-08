@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { RouteComponentProps, withRouter } from "react-router-dom";
 import ContactItem from './ContactItem';
+import {User} from "../_definitions/data";
 
 interface State {
   contacts: User[];

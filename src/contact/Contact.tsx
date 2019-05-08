@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import Loading from '../_widgets/Loading';
+import { User } from "../_definitions/data";
 
 interface Props {
   id: string

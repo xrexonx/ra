@@ -1,17 +1,13 @@
-import React, { Component, ReactPropTypes } from 'react';
+import React, { Component } from 'react';
 import Main from './main/Main';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 import './App.css';
 import { BrowserRouter } from "react-router-dom";
 
-interface State {
-  appTitle: string;
-}
+class App extends Component {
 
-class App extends Component<{}, State> {
-
-  constructor(props: ReactPropTypes) {
+  constructor(props) {
     super(props);
     this.state = {
       appTitle: 'React JS Training - FPT Software Philippines'
@@ -19,7 +15,7 @@ class App extends Component<{}, State> {
   }
 
   render() {
-    const { appTitle } = this.state;
+    const appTitle = this.state.appTitle;
     return (
       <BrowserRouter>
         <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
