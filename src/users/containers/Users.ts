@@ -6,16 +6,16 @@ import { usersFetchData } from "../middleware";
 
 const mapStateToProps = (state: AppState) => {
     console.log({state});
-    // const { user: { items, loading, error } } = state;
-    // if (items) {
-    //     // console.log({items});
-    //     return {
-    //         items,
-    //         loading,
-    //         error
-    //     }
-    // }
-
+    if (state && state.user) {
+        const {
+            user: { items, loading, error }
+        } = state;
+        return {
+            items,
+            loading,
+            error
+        }
+    }
     return {}
 };
 

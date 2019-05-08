@@ -6,28 +6,21 @@ import {
 } from "./actions";
 import { combineReducers } from "redux";
 
-const initialState = {
-    items: [],
-    loading: false,
-    error: null
-};
-
-const isLoading = (state = initialState.loading, action: Action<any>) => {
+const isLoading = (state = false, action: Action<any>) => {
     if (action.type === FETCH_USERS_BEGIN) {
         return action.payload.loading;
     }
     return state;
 };
 
-const items = (state = initialState.items, action: Action<any>) => {
+const items = (state = [], action: Action<any>) => {
     if (action.type === FETCH_USERS_SUCCESS) {
         return action.payload.users;
     }
     return state;
 };
 
-
-const errors = (state = initialState.error, action: Action<any>) => {
+const errors = (state = null, action: Action<any>) => {
     if (action.type === FETCH_USERS_FAILURE) {
         return action.payload.error;
     }

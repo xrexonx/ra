@@ -19,7 +19,7 @@ class App extends Component<{}, State> {
   }
 
   render() {
-    const appTitle = this.state.appTitle;
+    const { appTitle } = this.state;
     return (
       <BrowserRouter>
         <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">

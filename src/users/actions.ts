@@ -1,11 +1,10 @@
-import {User} from "../_definitions/data";
+import { User } from "../_definitions/data";
 
 export const FETCH_USERS_BEGIN = 'FETCH_USERS_BEGIN';
 export const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
 export const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE';
 
-
-export const fetchUsersBegin = (loading: any) => ({
+export const fetchUsersBegin = (loading: boolean) => ({
     type: FETCH_USERS_BEGIN,
     payload: { loading }
 });
