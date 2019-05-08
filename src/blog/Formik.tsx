@@ -6,7 +6,7 @@ interface User {
   name: string;
   email: string;
   phone: string;
-  password: string;
+  website: string;
 }
 
 class FormikComponent extends React.Component<FormikProps<User>> {
@@ -16,7 +16,7 @@ class FormikComponent extends React.Component<FormikProps<User>> {
       name: '',
       email: '',
       phone: '',
-      password: ''
+      website: ''
     };
   }
 
@@ -66,10 +66,10 @@ class FormikComponent extends React.Component<FormikProps<User>> {
             </div>
             <br/>
             <div className="mdl-textfield mdl-js-textfield">
-              <Field className="mdl-textfield__input" type="password" name="password" />
-              <label className="mdl-textfield__label" htmlFor="password">Password</label>
+              <Field className="mdl-textfield__input" type="website" name="website" />
+              <label className="mdl-textfield__label" htmlFor="website">Website</label>
               <span className="mdl-textfield__error">
-                <ErrorMessage name="password" component="div" />
+                <ErrorMessage name="website" component="div" />
               </span>
             </div>
             <br/>

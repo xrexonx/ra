@@ -37,8 +37,7 @@ class Users extends Component<Props> {
                         <th className="mdl-data-table__cell--non-numeric">Name</th>
                         <th className="mdl-data-table__cell--non-numeric">Email</th>
                         <th className="mdl-data-table__cell--non-numeric">Phone</th>
-                        <th className="mdl-data-table__cell--non-numeric">Company</th>
-                        <th className="mdl-data-table__cell--non-numeric">Address</th>
+                        <th className="mdl-data-table__cell--non-numeric">Website</th>
                         <th className="mdl-data-table__cell--non-numeric">Action</th>
                     </tr>
                     </thead>

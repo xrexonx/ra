@@ -5,7 +5,7 @@ interface UserForm {
   name: string;
   email: string;
   phone: string;
-  password: string;
+  website: string;
 }
 
 class Blog extends Component<FormikProps<UserForm>> {
@@ -15,7 +15,7 @@ class Blog extends Component<FormikProps<UserForm>> {
       name: '',
       email: '',
       phone: '',
-      password: ''
+      website: ''
     };
   }
 
@@ -27,6 +27,16 @@ class Blog extends Component<FormikProps<UserForm>> {
     actions.setSubmitting(true);
     console.log({values});
     // Submit data to server
+    fetch('http://localhost:8080/api/users', {
+      method: 'POST',
+      body: JSON.stringify(values), // data can be `string` or {object}!
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .then(response => console.log('Success:', JSON.stringify(response)))
+    .catch(error => console.error('Error:', error));
+
     setTimeout(() => {
       actions.setSubmitting(false);
     }, 400);
@@ -66,10 +76,10 @@ class Blog extends Component<FormikProps<UserForm>> {
               </div>
               <br/>
               <div className="mdl-textfield mdl-js-textfield">
-                <Field className="mdl-textfield__input" type="password" name="password" />
-                <label className="mdl-textfield__label" htmlFor="password">Password</label>
+                <Field className="mdl-textfield__input" type="text" name="website" />
+                <label className="mdl-textfield__label" htmlFor="website">Website</label>
                 <span className="mdl-textfield__error">
-              <ErrorMessage name="password" component="div" />
+              <ErrorMessage name="website" component="div" />
             </span>
               </div>
               <br/>

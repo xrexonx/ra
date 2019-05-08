@@ -9,7 +9,7 @@ export const usersFetchData = () => {
     return (dispatch: Dispatch) => {
         dispatch(fetchUsersBegin(true));
 
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('http://localhost:8080/api/users')
             .then(response => response.json())
             .then(data => {
                 dispatch(fetchUsersBegin(false));

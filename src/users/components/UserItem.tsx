@@ -14,8 +14,7 @@ class UserItem extends Component<Props> {
                 <td className="mdl-data-table__cell--non-numeric">{user.name}</td>
                 <td className="mdl-data-table__cell--non-numeric">{user.email}</td>
                 <td className="mdl-data-table__cell--non-numeric">{user.phone}</td>
-                <td className="mdl-data-table__cell--non-numeric">{user.company.name}</td>
-                <td className="mdl-data-table__cell--non-numeric">{user.address.city}</td>
+                <td className="mdl-data-table__cell--non-numeric">{user.website}</td>
                 <td className="mdl-data-table__cell--non-numeric">
                     <Link to={`/contact/${user.id}`}>View</Link>
                 </td>
