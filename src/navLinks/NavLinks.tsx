@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
 
-class NavLinks extends Component<RouteComponentProps> {
+interface Props {
+  links: string[];
+}
+
+type NavLinksProps = Props & RouteComponentProps;
+
+class NavLinks extends Component<NavLinksProps> {
   render() {
-    const path = this.props.location.pathname;
+    const { links, location: { pathname } } = this.props;
+
     return (
       <nav className="mdl-navigation mdl-typography--body-1-force-preferred-font">
-        <Link className={`mdl-navigation__link ${path === '/' ? 'is-active': ''}`} to="/">Portfolio</Link>
-        <Link className={`mdl-navigation__link ${path === '/blog' ? 'is-active': ''}`} to="/blog">Blog</Link>
-        <Link className={`mdl-navigation__link ${path === '/about' ? 'is-active': ''}`} to="/about">About</Link>
-        <Link className={`mdl-navigation__link ${path === '/contacts' ? 'is-active': ''}`} to="/contacts">Contacts</Link>
+        {links.map((link: string) => {
+          const nLink = link === 'Portfolio' ? '' : link.toLowerCase();
+          const to = `/${nLink}`;
+          const isActive = pathname === to ? 'is-active' : '';
+          const cNames = `mdl-navigation__link ${isActive}`;
+          return (
+            <Link
+              to={to}
+              key={link}
+              className={cNames}
+            >
+              {link}
+            </Link>
+          )}
+        )}
       </nav>
     );
   }

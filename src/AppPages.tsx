@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, ComponentClass, Fragment } from 'react';
 import { Route } from "react-router-dom";
 import PortfolioList from './portfolio/List';
 import Blog from "./blog/Blog";
@@ -6,7 +6,7 @@ import About from './about/About';
 import Contact from "./contact/Contact";
 import Contacts from "./contacts/Contacts";
 
-class AppPages extends Component {
+class AppPages extends Component<ComponentClass> {
   render() {
     return (
       <Fragment>

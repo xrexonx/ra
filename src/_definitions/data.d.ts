@@ -26,3 +26,9 @@ export interface User {
     company: Company;
     address: Address;
 }
+
+export interface Post {
+    id: number;
+    title: string;
+    body: string;
+}

@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reduxThunk from 'redux-thunk'
-import { Provider } from 'react-redux'
-import { applyMiddleware, createStore, Store } from 'redux'
+import reduxThunk from 'redux-thunk';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore, Store } from 'redux';
 import * as serviceWorker from './serviceWorker';
 import rootReducers from "./reducers";
 

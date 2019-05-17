@@ -1,13 +1,30 @@
 import React, { Component, Fragment } from 'react';
 import NavLinks from '../navLinks/NavLinks';
 
-interface Props {
-    headerTitle: string
+interface State {
+    headerTitle: string;
+    links: string[];
 }
 
-class Header extends Component<Props> {
+class Header extends Component<{}, State> {
+
+  componentDidMount() {
+    this.setState({
+      headerTitle: 'ReactJS Training - FPT Software PH',
+      links: [
+        'Portfolio',
+        'Blog',
+        'About',
+        'Users'
+      ]
+    })
+  }
+
   render() {
-    const { headerTitle } = this.props;
+    if (!this.state) {
+      return null;
+    }
+    const { headerTitle, links } = this.state;
     return (
       <Fragment>
         <header className="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
@@ -18,11 +35,11 @@ class Header extends Component<Props> {
             </span>
           </div>
           <div className="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
-            <NavLinks/>
+            <NavLinks links={links}/>
           </div>
         </header>
         <div className="mdl-layout__drawer mdl-layout--small-screen-only">
-          <NavLinks/>
+          <NavLinks links={links}/>
         </div>
       </Fragment>
     );
